@@ -3,9 +3,24 @@ using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
+    public static GameStateManager instance;
+    public string CurrentPlayerName { get; set; }
     public GameObject pauseMenuUI;
     private bool isPaused = false;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) // Nhấn ESC để bật/tắt Pause
