@@ -31,7 +31,7 @@ public class ScoreManager : MonoBehaviour
             }
         }
 
-         ResetScore();
+         //ResetScore();
         UpdateScoreUI();
     }
     public void AddScore(int amount)

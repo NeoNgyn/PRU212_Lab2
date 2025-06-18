@@ -70,7 +70,7 @@ public class GameTimerManager : MonoBehaviour
         }
 
         // Reset & start timer mỗi khi scene load lại
-        ResetTimer();
+        //ResetTimer();
         StartTimer();
     }
 }
