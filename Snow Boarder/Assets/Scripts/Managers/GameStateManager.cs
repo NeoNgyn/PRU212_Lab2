@@ -23,7 +23,7 @@ public class GameStateManager : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) // Nhấn ESC để bật/tắt Pause
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
                 ResumeGame();
@@ -35,7 +35,7 @@ public class GameStateManager : MonoBehaviour
     public void ResumeGame()
     {
         pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;  // Khôi phục tốc độ game
+        Time.timeScale = 1f;
         isPaused = false;
         if (MusicManager.Instance != null)
             MusicManager.Instance.ResumeMusic();
@@ -44,7 +44,7 @@ public class GameStateManager : MonoBehaviour
     public void PauseGame()
     {
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;  // Dừng game
+        Time.timeScale = 0f;
         isPaused = true;
 
         if (MusicManager.Instance != null)
@@ -52,7 +52,7 @@ public class GameStateManager : MonoBehaviour
     }
     public void RestartGame()
     {
-        Time.timeScale = 1f; // Khôi phục tốc độ trước khi reload
+        Time.timeScale = 1f;
         if (GameTimerManager.Instance != null)
         {
             GameTimerManager.Instance.ResetTimer();
@@ -67,9 +67,9 @@ public class GameStateManager : MonoBehaviour
 
     public void QuitGame()
     {
-        Time.timeScale = 1f;  // Tránh bị đứng nếu quay lại menu
+        Time.timeScale = 1f;
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false; // Dùng khi test trong Editor
+        UnityEditor.EditorApplication.isPlaying = false;
 #else
         Application.Quit(); // Thực tế
 #endif
