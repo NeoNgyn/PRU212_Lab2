@@ -59,7 +59,7 @@ public class GameTimerManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Tự động tìm lại Text nếu bị mất (sau khi scene reload)
+        
         if (timerText == null)
         {
             GameObject timerGO = GameObject.FindWithTag("TimerText");
