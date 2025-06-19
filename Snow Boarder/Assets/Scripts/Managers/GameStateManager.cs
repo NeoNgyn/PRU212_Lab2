@@ -36,6 +36,7 @@ public class GameStateManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        //Debug.LogWarning("Resume Clicked.");
         if (pauseMenuUI != null)
             pauseMenuUI.SetActive(false);
 
@@ -60,6 +61,7 @@ public class GameStateManager : MonoBehaviour
     }
     public void RestartGame()
     {
+        Debug.LogWarning("Restart Clicked.");
         Time.timeScale = 1f;
         if (GameTimerManager.Instance != null)
         {
@@ -75,6 +77,7 @@ public class GameStateManager : MonoBehaviour
 
     public void QuitGame()
     {
+        Debug.LogWarning("Quit Clicked.");
         Time.timeScale = 1f;
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
