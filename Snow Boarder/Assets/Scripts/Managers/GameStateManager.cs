@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
     public static GameStateManager instance;
-    public string CurrentPlayerName { get; set; }
+    public string CurrentPlayerName { get; set; }   
     public GameObject pauseMenuUI;
     private bool isPaused = false;
 
@@ -32,23 +33,30 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+
     public void ResumeGame()
     {
-        pauseMenuUI.SetActive(false);
+        if (pauseMenuUI != null)
+            pauseMenuUI.SetActive(false);
+
         Time.timeScale = 1f;
         isPaused = false;
-        if (MusicManager.Instance != null)
-            MusicManager.Instance.ResumeMusic();
+        MusicManager.Instance?.ResumeMusic();
     }
 
     public void PauseGame()
     {
+        if (pauseMenuUI == null)
+        {
+            Debug.LogWarning("Pause menu UI is still null.");
+            return;
+        }
+
+        Debug.Log("Pause menu found. Activating...");
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
-
-        if (MusicManager.Instance != null)
-            MusicManager.Instance.PauseMusic();
+        MusicManager.Instance?.PauseMusic();
     }
     public void RestartGame()
     {
