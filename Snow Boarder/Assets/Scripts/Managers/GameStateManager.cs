@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -72,7 +73,9 @@ public class GameStateManager : MonoBehaviour
         if (MusicManager.Instance != null)
             MusicManager.Instance.RestartMusic();
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (ScoreManager.Instance != null)
+            ScoreManager.Instance.ResetScore();
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame()

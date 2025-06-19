@@ -46,20 +46,20 @@ public class FinishLine : MonoBehaviour
     // ?ây là hàm ???c nâng c?p
     void LoadNextLevel()
     {
-        // L?y ch? s? (index) c?a scene hi?n t?i mà ng??i ch?i ?ang ?
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        // Tính toán ch? s? c?a scene ti?p theo b?ng cách c?ng thêm 1
-        int nextSceneIndex = currentSceneIndex + 1;
-
-        // KI?M TRA QUAN TR?NG: N?u scene ti?p theo không t?n t?i (?ã là màn cu?i)
-        // thì quay tr? v? màn ch?i ??u tiên (index = 0)
-        if (nextSceneIndex == SceneManager.sceneCountInBuildSettings)
+        if (currentSceneIndex == 3)
         {
-            nextSceneIndex = 0;
+            SceneManager.LoadScene("WinnerSence");
         }
-
-        // T?i scene v?i ch? s? ?ã ???c tính toán
-        SceneManager.LoadScene(nextSceneIndex);
+        else
+        {
+            int nextSceneIndex = currentSceneIndex + 1;
+            if (nextSceneIndex >= SceneManager.sceneCountInBuildSettings)
+            {
+                nextSceneIndex = 0; 
+            }
+            SceneManager.LoadScene(nextSceneIndex);
+        }
     }
 }

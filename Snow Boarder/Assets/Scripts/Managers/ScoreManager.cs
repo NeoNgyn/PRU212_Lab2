@@ -40,6 +40,11 @@ public class ScoreManager : MonoBehaviour
         UpdateScoreUI();
     }
 
+    public int GetScore()
+    {
+        return currentScore;
+    }
+
     void UpdateScoreUI()
     {
         if (scoreText != null)
