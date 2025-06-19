@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      view-apocalyptic-dark-clouds_0: -6776232851948718713
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
