@@ -2314,7 +2314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9692ce3404703fa4eaa59d32f750df23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 0}
+  pauseMenuUI: {fileID: 654565489}
 --- !u!1 &292384018
 GameObject:
   m_ObjectHideFlags: 0
@@ -26183,7 +26183,6 @@ RectTransform:
   - {fileID: 1877863127}
   - {fileID: 274555552}
   - {fileID: 1701935614}
-  - {fileID: 27864310}
   - {fileID: 688723402}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
