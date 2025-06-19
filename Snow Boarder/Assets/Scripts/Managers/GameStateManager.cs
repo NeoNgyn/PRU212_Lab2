@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts;
+using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
     public static GameStateManager instance;
-    public string CurrentPlayerName { get; set; }
+    public string CurrentPlayerName { get; set; }   
     public GameObject pauseMenuUI;
     private bool isPaused = false;
 
@@ -32,26 +34,35 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+
     public void ResumeGame()
     {
-        pauseMenuUI.SetActive(false);
+        //Debug.LogWarning("Resume Clicked.");
+        if (pauseMenuUI != null)
+            pauseMenuUI.SetActive(false);
+
         Time.timeScale = 1f;
         isPaused = false;
-        if (MusicManager.Instance != null)
-            MusicManager.Instance.ResumeMusic();
+        MusicManager.Instance?.ResumeMusic();
     }
 
     public void PauseGame()
     {
+        if (pauseMenuUI == null)
+        {
+            Debug.LogWarning("Pause menu UI is still null.");
+            return;
+        }
+
+        Debug.Log("Pause menu found. Activating...");
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
-
-        if (MusicManager.Instance != null)
-            MusicManager.Instance.PauseMusic();
+        MusicManager.Instance?.PauseMusic();
     }
     public void RestartGame()
     {
+        Debug.LogWarning("Restart Clicked.");
         Time.timeScale = 1f;
         if (GameTimerManager.Instance != null)
         {
@@ -62,11 +73,14 @@ public class GameStateManager : MonoBehaviour
         if (MusicManager.Instance != null)
             MusicManager.Instance.RestartMusic();
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (ScoreManager.Instance != null)
+            ScoreManager.Instance.ResetScore();
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame()
     {
+        Debug.LogWarning("Quit Clicked.");
         Time.timeScale = 1f;
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;

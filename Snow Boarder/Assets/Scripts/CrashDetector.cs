@@ -1,3 +1,4 @@
+using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class CrashDetector : MonoBehaviour
         if (other.tag == "Ground" && !hasCrashed)
         {
             hasCrashed = true;
+            CrashCounter.CrashCount++;
             FindObjectOfType<PlayerController>().DisableControls();
             crashEffect.Play();
             GetComponent<AudioSource>().PlayOneShot(crashSFX);
@@ -32,15 +34,16 @@ public class CrashDetector : MonoBehaviour
             MusicManager.Instance.RestartMusic();
         }
 
-        if (GameTimerManager.Instance != null)
-        {
-            GameTimerManager.Instance.ResetTimer();
-            GameTimerManager.Instance.StartTimer();
-        }
-        if (ScoreManager.Instance != null)
-        {
-            ScoreManager.Instance.ResetScore();
-        }
-        SceneManager.LoadScene(0);
+        //if (GameTimerManager.Instance != null)
+        //{
+        //    GameTimerManager.Instance.ResetTimer();
+        //    GameTimerManager.Instance.StartTimer();
+        //}
+        //if (ScoreManager.Instance != null)
+        //{
+        //    ScoreManager.Instance.ResetScore();
+        //}
+
+        SceneManager.LoadScene(1);
     }
 }
