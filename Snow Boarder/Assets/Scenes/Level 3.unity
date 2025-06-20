@@ -2923,6 +2923,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a80e5119fb5d047a468769ff85cec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startSceneMusic: {fileID: 8300000, guid: 3aa1777b22e3e494dbdcd59c224cb11a, type: 3}
+  levelMusic: {fileID: 8300000, guid: 1d0b58f1c414dfc41afb5c7824d0d310, type: 3}
 --- !u!1 &464829647
 GameObject:
   m_ObjectHideFlags: 0
@@ -26004,8 +26006,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Time: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 609dd8dbfe918f745bed252b4586db36, type: 2}
+  m_sharedMaterial: {fileID: 5115919167592312224, guid: 609dd8dbfe918f745bed252b4586db36, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -26685,8 +26687,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 609dd8dbfe918f745bed252b4586db36, type: 2}
+  m_sharedMaterial: {fileID: 5115919167592312224, guid: 609dd8dbfe918f745bed252b4586db36, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
