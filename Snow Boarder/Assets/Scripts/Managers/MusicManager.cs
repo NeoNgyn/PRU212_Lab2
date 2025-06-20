@@ -4,11 +4,13 @@ public class MusicManager : MonoBehaviour
 {
     public static MusicManager Instance;
 
+    public AudioClip startSceneMusic;
+    public AudioClip levelMusic;
+
     private AudioSource audioSource;
 
     void Awake()
     {
-        // Singleton pattern
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -16,38 +18,59 @@ public class MusicManager : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject); 
+        DontDestroyOnLoad(gameObject);
 
         audioSource = GetComponent<AudioSource>();
-        if (!audioSource.isPlaying)
+    }
+
+    private void Start()
+    {
+        UpdateMusicForScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+    {
+        UpdateMusicForScene(scene.name);
+    }
+
+    private void UpdateMusicForScene(string sceneName)
+    {
+        if (sceneName == "StartScene")
         {
-            audioSource.Play();
+            SwitchTo(startSceneMusic);
+        }
+        else
+        {
+            SwitchTo(levelMusic);
         }
     }
 
-    public void StopMusic()
+    private void SwitchTo(AudioClip clip)
     {
+        if (clip == null || audioSource.clip == clip) return;
+
         audioSource.Stop();
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 
+    public void StopMusic() => audioSource.Stop();
     public void PlayMusic()
     {
         if (!audioSource.isPlaying)
             audioSource.Play();
     }
-
     public void PauseMusic()
     {
         if (audioSource.isPlaying)
             audioSource.Pause();
     }
-
     public void ResumeMusic()
     {
         if (!audioSource.isPlaying)
             audioSource.UnPause();
     }
-
     public void RestartMusic()
     {
         audioSource.Stop();

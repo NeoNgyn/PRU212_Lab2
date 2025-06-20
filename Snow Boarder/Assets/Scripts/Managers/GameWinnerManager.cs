@@ -42,12 +42,25 @@ namespace Assets.Scripts.Managers
 
         public void MainMenu()
         {
+            LeaderboardEntry entry = new LeaderboardEntry
+            {
+                playerName = GameStateManager.instance?.CurrentPlayerName ?? "Unknown",
+                score = ScoreManager.Instance?.GetScore() ?? 0,
+                timeInSeconds = GameTimerManager.Instance?.GetTime() ?? 0f,
+                deathCount = CrashCounter.CrashCount
+            };
+
+            LeaderboardStorage.AddEntry(entry);
+
+            // Reset
             Destroy(GameStateManager.instance?.gameObject);
             Destroy(ScoreManager.Instance?.gameObject);
             Destroy(MusicManager.Instance?.gameObject);
             Destroy(GameTimerManager.Instance?.gameObject);
             CrashCounter.CrashCount = 0;
+
             SceneManager.LoadScene(0);
         }
+
     }
 }

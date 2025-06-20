@@ -2533,6 +2533,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a80e5119fb5d047a468769ff85cec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startSceneMusic: {fileID: 8300000, guid: 3aa1777b22e3e494dbdcd59c224cb11a, type: 3}
+  levelMusic: {fileID: 8300000, guid: 1d0b58f1c414dfc41afb5c7824d0d310, type: 3}
 --- !u!1 &502716089
 GameObject:
   m_ObjectHideFlags: 0
