@@ -11,7 +11,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float flipDuration = 0.5f;  // Thời gian để lộn 1 vòng
     [SerializeField] float flipAngle = 360f;     // Góc quay tròn khi lộn
     [SerializeField] float jumpForce = 7f;       // Lực nhảy lên
+    [Header("Audio Settings")] // <-- Thêm mục mới cho dễ quản lý
+    [SerializeField] AudioClip jumpSound; // <-- Biến để chứa file âm thanh
 
+    AudioSource audioSource; // <-- Component để phát âm thanh
     Rigidbody2D rb2d;               
     SurfaceEffector2D surfaceEffector2D; // Hiệu ứng trượt trên mặt phẳng
     bool canMove = true;            // Check có đang điều khiển nhân vật ko
@@ -21,7 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         // Lấy component Rigidbody2D của player
         rb2d = GetComponent<Rigidbody2D>();
-
+        audioSource = GetComponent<AudioSource>();
         // Tìm SurfaceEffector2D trong scene để thay đổi tốc độ trượt
         surfaceEffector2D = FindObjectOfType<SurfaceEffector2D>();
     }
@@ -126,7 +129,9 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            audioSource.PlayOneShot(jumpSound);
             StartCoroutine(FlipXCombo());
+            
         }
     }
 

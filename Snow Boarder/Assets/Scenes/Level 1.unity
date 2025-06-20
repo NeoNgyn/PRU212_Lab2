@@ -2745,13 +2745,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434267918}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7a80e5119fb5d047a468769ff85cec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startSceneMusic: {fileID: 8300000, guid: 3aa1777b22e3e494dbdcd59c224cb11a, type: 3}
-  levelMusic: {fileID: 8300000, guid: 1d0b58f1c414dfc41afb5c7824d0d310, type: 3}
+  levelMusicList: []
 --- !u!1 &498367626
 GameObject:
   m_ObjectHideFlags: 0
@@ -22088,6 +22088,7 @@ MonoBehaviour:
   flipDuration: 0.5
   flipAngle: 360
   jumpForce: 7
+  jumpSound: {fileID: 8300000, guid: d29100237b0b5484abd5e6a34f9e8586, type: 3}
 --- !u!114 &2140889607
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,11 +1,20 @@
-﻿using UnityEngine;
+﻿using UnityEditor.SearchService;
+using UnityEngine;
+using UnityEngine.SceneManagement; // Thêm dòng này
+[System.Serializable]
+public class SceneMusic
+{
+    public string sceneName;
+    public AudioClip musicClip;
+}
 
 public class MusicManager : MonoBehaviour
 {
     public static MusicManager Instance;
 
     public AudioClip startSceneMusic;
-    public AudioClip levelMusic;
+    //public AudioClip levelMusic;
+    public SceneMusic[] levelMusicList;
 
     private AudioSource audioSource;
 
@@ -28,7 +37,10 @@ public class MusicManager : MonoBehaviour
         UpdateMusicForScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
     }
-
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
     {
         UpdateMusicForScene(scene.name);
@@ -42,7 +54,18 @@ public class MusicManager : MonoBehaviour
         }
         else
         {
-            SwitchTo(levelMusic);
+            AudioClip clipToPlay = null;
+            foreach (var sceneMusic in levelMusicList)
+            {
+                // LỖI: Biến 'scene' không tồn tại. 
+                // Ở đây bạn chỉ có biến 'sceneName' là một chuỗi (string).
+                if (sceneMusic.sceneName == sceneName)
+                {
+                    clipToPlay = sceneMusic.musicClip;
+                    break;
+                }
+            }
+            SwitchTo(clipToPlay);
         }
     }
 
