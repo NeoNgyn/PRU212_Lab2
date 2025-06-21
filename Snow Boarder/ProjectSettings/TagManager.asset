@@ -8,6 +8,7 @@ TagManager:
   - TimerText
   - ScoreText
   - PauseMenu
+  - Death
   layers:
   - Default
   - TransparentFX
