@@ -8558,7 +8558,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774775880}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -9224,6 +9224,51 @@ Transform:
   - {fileID: 502716090}
   - {fileID: 1698115536}
   - {fileID: 313571183}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1046032375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1046032377}
+  - component: {fileID: 1046032376}
+  m_Layer: 0
+  m_Name: GraveSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1046032376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046032375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a652de32ad461eb46991b16764715419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravePrefab: {fileID: 8530102070540046087, guid: 601f0a697369f3a46b62849646544367, type: 3}
+--- !u!4 &1046032377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046032375}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 305.09418, y: -11.41599, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1071689127
@@ -19292,7 +19337,7 @@ GameObject:
   - component: {fileID: 1328370233}
   m_Layer: 0
   m_Name: Ghost (4)
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20172,7 +20217,7 @@ GameObject:
   - component: {fileID: 1440789664}
   m_Layer: 0
   m_Name: Ghost
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20815,7 +20860,7 @@ GameObject:
   - component: {fileID: 1611280971}
   m_Layer: 0
   m_Name: Ghost (3)
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21487,7 +21532,7 @@ GameObject:
   - component: {fileID: 1781186581}
   m_Layer: 0
   m_Name: Ghost (1)
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28376,7 +28421,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadDelay: 1
   crashEffect: {fileID: 542447619}
-  crashSFX: {fileID: 8300000, guid: 6a53531be5bb01741b71167414c12a17, type: 3}
+  crashSFX: {fileID: 8300000, guid: ce3415dec910d3b438a990ab6b42f6b9, type: 3}
+  gravePrefab: {fileID: 8530102070540046087, guid: 601f0a697369f3a46b62849646544367, type: 3}
 --- !u!82 &2140889608
 AudioSource:
   m_ObjectHideFlags: 0
@@ -28670,3 +28716,4 @@ SceneRoots:
   - {fileID: 1611280975}
   - {fileID: 1781186585}
   - {fileID: 93874685}
+  - {fileID: 1046032377}

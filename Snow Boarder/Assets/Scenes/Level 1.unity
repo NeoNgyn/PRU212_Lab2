@@ -8423,7 +8423,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774775880}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -8985,19 +8985,22 @@ Transform:
   m_GameObject: {fileID: 1019368066}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 318.8596, y: -17.0427, z: 0}
-  m_LocalScale: {x: 14.660781, y: 15.807669, z: 1}
+  m_LocalPosition: {x: 319.057, y: -17.5472, z: 0}
+  m_LocalScale: {x: 13.081815, y: 11.926886, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 313571183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1019368069
-BoxCollider:
+--- !u!61 &1019368069
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019368066}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -9006,12 +9009,34 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.25, y: 0.26, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.25, y: 0.26}
+    newSize: {x: 2.56, y: 1.3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.25, y: 0.26}
+  m_EdgeRadius: 0
 --- !u!1 &1035774429
 GameObject:
   m_ObjectHideFlags: 0
@@ -20266,6 +20291,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4759594086551279845, guid: eddca9b640f61494b87508b72e7baab3, type: 3}
   m_PrefabInstance: {fileID: 836363135}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1785278249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1785278251}
+  - component: {fileID: 1785278250}
+  m_Layer: 0
+  m_Name: GraveSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1785278250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785278249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a652de32ad461eb46991b16764715419, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravePrefab: {fileID: 8530102070540046087, guid: 601f0a697369f3a46b62849646544367, type: 3}
+--- !u!4 &1785278251
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785278249}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 305.09418, y: -11.41599, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1796137698
 GameObject:
   m_ObjectHideFlags: 0
@@ -22103,7 +22173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadDelay: 1
   crashEffect: {fileID: 542447619}
-  crashSFX: {fileID: 8300000, guid: 6a53531be5bb01741b71167414c12a17, type: 3}
+  crashSFX: {fileID: 8300000, guid: ce3415dec910d3b438a990ab6b42f6b9, type: 3}
+  gravePrefab: {fileID: 8530102070540046087, guid: 601f0a697369f3a46b62849646544367, type: 3}
 --- !u!82 &2140889608
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22384,3 +22455,4 @@ SceneRoots:
   - {fileID: 1842684116}
   - {fileID: 508752524}
   - {fileID: 558602890}
+  - {fileID: 1785278251}

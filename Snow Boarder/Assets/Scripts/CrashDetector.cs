@@ -1,4 +1,4 @@
-using Assets.Scripts;
+﻿using Assets.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,15 +9,26 @@ public class CrashDetector : MonoBehaviour
     [SerializeField] float loadDelay = 1f;
     [SerializeField] ParticleSystem crashEffect;
     [SerializeField] AudioClip crashSFX;
+    [SerializeField] GameObject gravePrefab;
     bool hasCrashed;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Ground" && !hasCrashed)
+        if ((other.tag == "Death" || other.tag == "Ground") && !hasCrashed)
         {
             hasCrashed = true;
             CrashCounter.CrashCount++;
             FindObjectOfType<PlayerController>().DisableControls();
+
+            // Lưu mộ tại vị trí chết
+            Vector3 gravePosition = transform.position;
+            gravePosition.y = other.ClosestPoint(transform.position).y; 
+            Instantiate(gravePrefab, gravePosition, Quaternion.identity);
+
+            // Lưu mộ tại màn đó
+            string currentScene = SceneManager.GetActiveScene().name;
+            GraveRegistry.AddGrave(currentScene, gravePosition);
+
             crashEffect.Play();
             GetComponent<AudioSource>().PlayOneShot(crashSFX);
             if (GameTimerManager.Instance != null)
