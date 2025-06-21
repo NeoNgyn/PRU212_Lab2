@@ -3273,7 +3273,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startSceneMusic: {fileID: 8300000, guid: 3aa1777b22e3e494dbdcd59c224cb11a, type: 3}
-  levelMusic: {fileID: 8300000, guid: 1d0b58f1c414dfc41afb5c7824d0d310, type: 3}
+  levelMusicList:
+  - sceneName: Level 1
+    musicClip: {fileID: 8300000, guid: 1d0b58f1c414dfc41afb5c7824d0d310, type: 3}
+  - sceneName: Level 2
+    musicClip: {fileID: 8300000, guid: 8439ba47173db5c439d7e975afa2bac9, type: 3}
+  - sceneName: Level 3
+    musicClip: {fileID: 8300000, guid: 874df8e9ee3721248b12a3078aca4c0c, type: 3}
 --- !u!82 &1024520077
 AudioSource:
   m_ObjectHideFlags: 0
