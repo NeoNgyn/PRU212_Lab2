@@ -17,6 +17,7 @@ public class CrashDetector : MonoBehaviour
         if ((other.tag == "Death" || other.tag == "Ground") && !hasCrashed)
         {
             hasCrashed = true;
+            ScoreManager.Instance.AddScore(-20);
             CrashCounter.CrashCount++;
             FindObjectOfType<PlayerController>().DisableControls();
 
