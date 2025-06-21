@@ -163,6 +163,8 @@ public class PlayerController : MonoBehaviour
             yield return null; // Đợi frame tiếp theo
         }
 
+        ScoreManager.Instance.AddScore(5);
+
         isFlipping = false; // Kết thúc lộn, cho phép thao tác khác
     }
 
@@ -195,6 +197,9 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
 
+        ScoreManager.Instance.AddScore(5);
+
+
         isFlipping = false;
     }
 
@@ -226,6 +231,7 @@ public class PlayerController : MonoBehaviour
             totalRotation += rotateAmount;
             yield return null;
         }
+        ScoreManager.Instance.AddScore(5);
 
         isFlipping = false;
     }

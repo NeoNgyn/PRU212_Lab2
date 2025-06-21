@@ -9,6 +9,7 @@ public class GameTimerManager : MonoBehaviour
     private float elapsedTime = 0f;
     private bool isRunning = true;
 
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -27,6 +28,8 @@ public class GameTimerManager : MonoBehaviour
         if (!isRunning) return;
 
         elapsedTime += Time.deltaTime;
+
+        
         UpdateTimerUI();
     }
 
@@ -35,6 +38,7 @@ public class GameTimerManager : MonoBehaviour
         int minutes = Mathf.FloorToInt(elapsedTime / 60f);
         int seconds = Mathf.FloorToInt(elapsedTime % 60f);
         timerText.text = $"Time: {minutes:00}:{seconds:00}";
+
     }
 
     public void ResetTimer()
