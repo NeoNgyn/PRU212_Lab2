@@ -16,8 +16,11 @@ public class CrashDetector : MonoBehaviour
     {
         if ((other.tag == "Death" || other.tag == "Ground") && !hasCrashed)
         {
+            crashEffect.Play();
+            GetComponent<AudioSource>().PlayOneShot(crashSFX);
+
             hasCrashed = true;
-            ScoreManager.Instance.AddScore(-20);
+            ScoreManager.Instance.AddScore(-50);
             CrashCounter.CrashCount++;
             FindObjectOfType<PlayerController>().DisableControls();
 
@@ -30,8 +33,6 @@ public class CrashDetector : MonoBehaviour
             string currentScene = SceneManager.GetActiveScene().name;
             GraveRegistry.AddGrave(currentScene, gravePosition);
 
-            crashEffect.Play();
-            GetComponent<AudioSource>().PlayOneShot(crashSFX);
             if (GameTimerManager.Instance != null)
             {
                 GameTimerManager.Instance.StopTimer();

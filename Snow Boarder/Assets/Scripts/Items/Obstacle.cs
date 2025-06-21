@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class Obstacle : MonoBehaviour
 {
-    public int scoreValue = -5;
     [SerializeField] private AudioClip collectSound;
     private AudioSource audioSource;
 
@@ -16,7 +15,7 @@ public class Obstacle : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             hasHit = true;
-            ScoreManager.Instance.AddScore(scoreValue);
+            ScoreManager.Instance.AddScore(-15);
             AudioSource.PlayClipAtPoint(collectSound, transform.position);
         }
     }
