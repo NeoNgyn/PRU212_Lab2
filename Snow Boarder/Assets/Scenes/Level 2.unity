@@ -28522,7 +28522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  boostSpeed: 35
+  boostSpeed: 20
   flipDuration: 0.5
   flipAngle: 360
   jumpForce: 7
