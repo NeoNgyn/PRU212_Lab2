@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpForce = 7f;       // Lực nhảy lên
     [Header("Audio Settings")] // <-- Thêm mục mới cho dễ quản lý
     [SerializeField] AudioClip jumpSound; // <-- Biến để chứa file âm thanh
+    [SerializeField] AudioClip upJumpSound; 
+    [SerializeField] AudioClip downJumpSound;
+    [SerializeField] AudioClip enterJumpSound;
 
     AudioSource audioSource; // <-- Component để phát âm thanh
     Rigidbody2D rb2d;               
@@ -52,6 +55,7 @@ public class PlayerController : MonoBehaviour
         // Lộn quanh trục Y khi nhấn Enter hoặc kết hợp Lên - XUống lộn chong chóng tre
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            audioSource.PlayOneShot(enterJumpSound, 0.15f);
             StartCoroutine(SpinCombo());
         }
     }
@@ -114,10 +118,12 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            audioSource.PlayOneShot(upJumpSound, 0.9f);
             StartCoroutine(FlipZ(-1)); // Lộn 360 độ theo chiều kim đồng hồ 
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
+            audioSource.PlayOneShot(downJumpSound, 0.75f);
             StartCoroutine(FlipZ(1));  // Lộn 360 độ ngược chiều kim đồng hồ 
         }
     }
@@ -129,7 +135,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            audioSource.PlayOneShot(jumpSound);
+            audioSource.PlayOneShot(jumpSound, 0.42f);
             StartCoroutine(FlipXCombo());
             
         }

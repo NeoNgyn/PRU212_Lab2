@@ -8475,7 +8475,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409fa7368c1b7214fbeb480483dc0e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: -5
   collectSound: {fileID: 8300000, guid: ce3415dec910d3b438a990ab6b42f6b9, type: 3}
 --- !u!4 &787773014 stripped
 Transform:
@@ -9065,7 +9064,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409fa7368c1b7214fbeb480483dc0e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: -5
   collectSound: {fileID: 8300000, guid: ce3415dec910d3b438a990ab6b42f6b9, type: 3}
 --- !u!1 &1035774429
 GameObject:
@@ -19580,7 +19578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409fa7368c1b7214fbeb480483dc0e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: -5
   collectSound: {fileID: 8300000, guid: ce3415dec910d3b438a990ab6b42f6b9, type: 3}
 --- !u!1 &1475516442
 GameObject:
@@ -21679,7 +21676,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409fa7368c1b7214fbeb480483dc0e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: -5
   collectSound: {fileID: 8300000, guid: ce3415dec910d3b438a990ab6b42f6b9, type: 3}
 --- !u!1 &1964084747
 GameObject:
@@ -21828,7 +21824,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409fa7368c1b7214fbeb480483dc0e6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: -5
   collectSound: {fileID: 8300000, guid: ce3415dec910d3b438a990ab6b42f6b9, type: 3}
 --- !u!1 &1991731468
 GameObject:
@@ -22229,11 +22224,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  boostSpeed: 20
+  boostSpeed: 25
   flipDuration: 0.5
   flipAngle: 360
   jumpForce: 7
-  jumpSound: {fileID: 8300000, guid: d29100237b0b5484abd5e6a34f9e8586, type: 3}
+  jumpSound: {fileID: 8300000, guid: ab1fcdcc383c55e43b856b5cbaf85c16, type: 3}
+  upJumpSound: {fileID: 8300000, guid: 3cfbd8f178a03ec418a7438e212226f5, type: 3}
+  downJumpSound: {fileID: 8300000, guid: a7134a60f4a1d374f94f1fd1804e55d4, type: 3}
+  enterJumpSound: {fileID: 8300000, guid: 3f69798ce27ee8a4e8ea8f5dcca5d33f, type: 3}
 --- !u!114 &2140889607
 MonoBehaviour:
   m_ObjectHideFlags: 0
