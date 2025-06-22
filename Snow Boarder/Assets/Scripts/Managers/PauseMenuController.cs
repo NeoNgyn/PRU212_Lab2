@@ -16,6 +16,6 @@ public class PauseMenuController : MonoBehaviour
         restartButton.onClick.AddListener(() => GameStateManager.instance.RestartGame());
 
         quitButton.onClick.RemoveAllListeners();
-        quitButton.onClick.AddListener(() => GameStateManager.instance.QuitGame());
+        quitButton.onClick.AddListener(() => GameStateManager.instance.MainMenu());
     }
 }

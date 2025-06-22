@@ -38,10 +38,10 @@ public class PlayerController : MonoBehaviour
         if (!canMove) return;
 
         // Điều chỉnh tốc độ khi giữ Shift
-        moveSpeed = Input.GetKey(KeyCode.LeftShift) ? boostSpeed : moveSpeed;
+        float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? boostSpeed : moveSpeed;
 
         // Di chuyển trái phải
-        MovePlayerLeftRight();
+        MovePlayerLeftRight(currentSpeed);
 
         // Thay đổi tốc độ trượt trên mặt phẳng
         RespondToBoost();
@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Di chuyển trái hoặc phải khi giữ phím mũi tên
-    void MovePlayerLeftRight()
+    void MovePlayerLeftRight(float currentSpeed)
     {
         float horizontalInput = 0f;
 
@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Thiết lập vận tốc tuyến tính của nhân vật theo hướng ngang và tốc độ hiện tại
-        rb2d.linearVelocity = new Vector2(horizontalInput * moveSpeed, rb2d.linearVelocity.y);
+        rb2d.linearVelocity = new Vector2(horizontalInput * currentSpeed, rb2d.linearVelocity.y);
     }
 
     // Quay trái
@@ -169,7 +169,7 @@ public class PlayerController : MonoBehaviour
             yield return null; // Đợi frame tiếp theo
         }
 
-        ScoreManager.Instance.AddScore(5);
+        ScoreManager.Instance.AddScore(2);
 
         isFlipping = false; // Kết thúc lộn, cho phép thao tác khác
     }
@@ -203,7 +203,7 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
 
-        ScoreManager.Instance.AddScore(5);
+        ScoreManager.Instance.AddScore(2);
 
 
         isFlipping = false;
@@ -237,7 +237,7 @@ public class PlayerController : MonoBehaviour
             totalRotation += rotateAmount;
             yield return null;
         }
-        ScoreManager.Instance.AddScore(5);
+        ScoreManager.Instance.AddScore(2);
 
         isFlipping = false;
     }

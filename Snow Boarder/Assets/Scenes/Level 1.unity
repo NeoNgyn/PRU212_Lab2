@@ -21397,7 +21397,7 @@ GameObject:
   - component: {fileID: 1929427362}
   - component: {fileID: 1929427361}
   m_Layer: 5
-  m_Name: QuitButton
+  m_Name: ReturnButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21469,7 +21469,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 279723176}
         m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
