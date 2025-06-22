@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd18a06bead11cc48aaaa42e38d08915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 10
+  scoreValue: 2
   collectSound: {fileID: 8300000, guid: c52c00417763bb04796cfd2a7964c03d, type: 3}
 --- !u!50 &8259237797436809258
 Rigidbody2D:
