@@ -152,6 +152,10 @@ public class PlayerController : MonoBehaviour
         // Đợi 0.05s để nhân vật bật lên rồi mới quay
         yield return new WaitForSeconds(0.05f);
 
+        // Reset rotation trước khi xoay
+        transform.rotation = Quaternion.identity;
+
+
         // Biến đếm tổng góc đã quay
         float totalRotation = 0f;
 
@@ -182,6 +186,9 @@ public class PlayerController : MonoBehaviour
         // Nhảy lên
         rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         yield return new WaitForSeconds(0.05f);
+
+        // Reset rotation trước khi xoay
+        transform.rotation = Quaternion.identity;
 
         float direction = 0f;
 
@@ -217,6 +224,9 @@ public class PlayerController : MonoBehaviour
         // Nhảy lên
         rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         yield return new WaitForSeconds(0.05f);
+
+        // Reset rotation trước khi xoay
+        transform.rotation = Quaternion.identity;
 
         float directionX = 0f;
 
