@@ -20,7 +20,7 @@ public class CrashDetector : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(crashSFX);
 
             hasCrashed = true;
-            ScoreManager.Instance.AddScore(-50);
+            ScoreManager.Instance.AddScore(-30);
             CrashCounter.CrashCount++;
             FindObjectOfType<PlayerController>().DisableControls();
 

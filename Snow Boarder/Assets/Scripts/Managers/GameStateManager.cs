@@ -93,6 +93,8 @@ public class GameStateManager : MonoBehaviour
 
     public void MainMenu()
     {
+        Time.timeScale = 1f;
+
         LeaderboardEntry entry = new LeaderboardEntry
         {
             playerName = GameStateManager.instance?.CurrentPlayerName ?? "Unknown",

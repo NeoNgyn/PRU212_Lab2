@@ -15,7 +15,7 @@ public class Obstacle : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             hasHit = true;
-            ScoreManager.Instance.AddScore(-15);
+            ScoreManager.Instance.AddScore(-10);
             AudioSource.PlayClipAtPoint(collectSound, transform.position);
         }
     }
